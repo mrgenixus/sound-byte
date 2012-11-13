@@ -3,7 +3,6 @@ class Channel < ActiveRecord::Base
   has_many :episodes
   def to_param
   	if ! self.slug 
-  		self.slug = self.title.parameterize 
   		self.save
   	end
   	self.slug
