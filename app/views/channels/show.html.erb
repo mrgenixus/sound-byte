@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<%= link_to "RSS Feed for Channel", channel_path(@channel,:rss) %>
 <p>
   <b>Author:</b>
   <%= @channel.author %>
@@ -25,6 +25,9 @@
   <%= @channel.language %>
 </p>
 
+<dl>
+  <%= render @channel.episodes %>
+</dl>
 
 <%= link_to 'Edit', edit_channel_path(@channel) %> |
 <%= link_to 'Back', channels_path %>

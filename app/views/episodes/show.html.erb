@@ -2,7 +2,7 @@
 
 <p>
   <b>Channel:</b>
-  <%= @episode.channel.title %>
+  <%= link_to @episode.channel.title, channel_path(@episode.channel) %>
 </p>
 
 <p>
@@ -20,11 +20,7 @@
   <%= @episode.track_length_formatted %>
 </p>
 
-<p>
-  <b>Content type:</b>
-  <%= @episode.content_type %>
-</p>
-
+<%= debug(:audio) %>
 
 <%= link_to 'Edit', edit_episode_path(@episode) %> |
 <%= link_to 'Back', episodes_path %>

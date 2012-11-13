@@ -1,4 +1,4 @@
-<%= form_for(@episode) do |f| %>
+<%= form_for(@episode, :html=> {:multipart => true}) do |f| %>
   <% if @episode.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@episode.errors.count, "error") %> prohibited this episode from being saved:</h2>
@@ -24,12 +24,8 @@
     <%= f.text_field :subtitle %>
   </div>
   <div class="field">
-    <%= f.label :track_length %><br />
-    <%= f.number_field :track_length %>
-  </div>
-  <div class="field">
-    <%= f.label :content_type %><br />
-    <%= f.text_field :content_type %>
+    <%= f.label :audio %><br />
+    <%= f.file_field :audio %>
   </div>
   <div class="actions">
     <%= f.submit %>

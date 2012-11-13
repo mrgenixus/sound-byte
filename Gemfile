@@ -19,6 +19,7 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
 end
+gem 'aws-s3'
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 gem 'jquery-rails'
 

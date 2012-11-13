@@ -1,0 +1,6 @@
+    <dt><%= episode.title %></dt>
+    <dd><b><%= episode.subtitle %></b> <em><%= episode.track_length_formatted %></em>
+    <span class="show"><%= link_to 'Show', episode %></span>
+    <span class="edit"><%= link_to 'Edit', edit_episode_path(episode) %></span>
+    <span class="delete"><%= link_to 'Destroy', episode, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+    </dd>
