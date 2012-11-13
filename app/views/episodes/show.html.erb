@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Channel:</b>
+  <%= @episode.channel.title %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @episode.title %>
+</p>
+
+<p>
+  <b>Subtitle:</b>
+  <%= @episode.subtitle %>
+</p>
+
+<p>
+  <b>Track length:</b>
+  <%= @episode.track_length_formatted %>
+</p>
+
+<p>
+  <b>Content type:</b>
+  <%= @episode.content_type %>
+</p>
+
+
+<%= link_to 'Edit', edit_episode_path(@episode) %> |
+<%= link_to 'Back', episodes_path %>

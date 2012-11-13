@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  channel_id: 
+  title: MyString
+  subtitle: MyString
+  track_length: 1
+  content_type: MyString
+
+two:
+  channel_id: 
+  title: MyString
+  subtitle: MyString
+  track_length: 1
+  content_type: MyString
