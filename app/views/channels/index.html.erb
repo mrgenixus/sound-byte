@@ -10,7 +10,7 @@
     <p><%= channel.summary %></p>
     <p class="meta">CATEGORY: <span><%= channel.category %></span></p>
     <p class="meta">LANGUAGE: <span><%= channel.language %></span></p>
-    <p class="meta">Episodes: <span>8</span></p>
+    <p class="meta">EPISODES: <span><%= channel.episodes.count %></span></p>
     <div class="controls"><%= link_to '<i class="icon-edit"></i>'.html_safe, edit_channel_path(channel) %><%= link_to '<i class="icon-trash"></i>'.html_safe, channel, method: :delete, data: { confirm: 'Are you sure?' } %><%= link_to '<i class="icon-fire"></i>'.html_safe, channel_path(channel, :rss) %></div>
 </div>
     <% end %>
