@@ -1,32 +1,18 @@
-<h1>Listing channels</h1>
+<h1>Channels!</h1>
 
-<table>
-  <tr>
-    <th>Author</th>
-    <th>Title</th>
-    <th>Summary</th>
-    <th>Category</th>
-    <th>Language</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+
 
 <% @channels.each do |channel| %>
-  <tr>
-    <td><%= channel.author %></td>
-    <td><%= channel.title %></td>
-    <td><%= channel.summary %></td>
-    <td><%= channel.category %></td>
-    <td><%= channel.language %></td>
-    <td><%= link_to 'Show', channel %></td>
-    <td><%= link_to 'Edit', edit_channel_path(channel) %></td>
-    <td><%= link_to 'Destroy', channel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    <td><%= link_to 'RSS', channel_path(channel, :rss) %></td>
-  </tr>
+<%= link_to channel do %>
+  <div class="channel">
+    <h2><%= channel.title %></h2>
+    <p class="author"><%= channel.author %></p>
+    <p><%= channel.summary %></p>
+    <p class="meta">CATEGORY <span><%= channel.category %></span></p>
+    <p class="meta">LANGUAGE: <span><%= channel.language %></span></p>
+    <p class="meta">Episodes: <span>8</span></p>
+    <div><%= link_to 'Edit', edit_channel_path(channel) %><%= link_to 'Destroy', channel, method: :delete, data: { confirm: 'Are you sure?' } %><%= link_to 'RSS', channel_path(channel, :rss) %></div>
+</div>
+    <% end %>
 <% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Channel', new_channel_path %>
+<%= link_to 'New Channel', new_channel_path, :class => "btn" %>
