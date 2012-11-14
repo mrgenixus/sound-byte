@@ -1,18 +1,22 @@
+<div class="buttonbar">
+	<%= link_to 'New Channel', new_channel_path, :class => "btn" %>
+</div>
 <h1>Channels!</h1>
 
 
-
+<div class="channel-list">
 <% @channels.each do |channel| %>
 <%= link_to channel, :class => 'channel-link' do %>
   <div class="channel">
     <h2><%= channel.title %></h2>
     <p class="author"> BY <span><%= channel.author %></span></p>
-    <p><%= channel.summary %></p>
+    <p class="description"><%= channel.summary %></p>
     <p class="meta">CATEGORY: <span><%= channel.category %></span></p>
     <p class="meta">LANGUAGE: <span><%= channel.language %></span></p>
     <p class="meta">EPISODES: <span><%= channel.episodes.count %></span></p>
-    <div class="controls"><%= link_to '<i class="icon-edit"></i>'.html_safe, edit_channel_path(channel) %><%= link_to '<i class="icon-trash"></i>'.html_safe, channel, method: :delete, data: { confirm: 'Are you sure?' } %><%= link_to '<i class="icon-fire"></i>'.html_safe, channel_path(channel, :rss) %></div>
+    <div class="controls"><%= link_to '<i class="icon-edit icon-white"></i>'.html_safe, edit_channel_path(channel) %><%= link_to '<i class="icon-trash icon-white"></i>'.html_safe, channel, method: :delete, data: { confirm: 'Are you sure?' } %><%= link_to '<i class="icon-fire icon-white"></i>'.html_safe, channel_path(channel, :rss) %></div>
 </div>
     <% end %>
 <% end %>
-<%= link_to 'New Channel', new_channel_path, :class => "btn" %>
+</div>
+

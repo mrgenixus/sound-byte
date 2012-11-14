@@ -1,50 +1,63 @@
 
 @import "twitter/bootstrap/mixins";
 
+@background:#222222;
+@overlay:rgba(200,200,255,0.1);
+@overlayhover:rgba(200,200,255,0.2);
+@overlayborder:rgba(200,200,255,0.3);
+@strongtext:#eeeeee;
+@weaktext:#bbb;
+
+
 h1 {
-	
+	color:@weaktext;
+}
+h2 {
+	color:@strongtext;
 }
 
-.channel {
-	background:#ddd;
-	margin:10px;
-	padding:10px;
-	border: 2px solid #888;
-	border-radius: 6px;
-	position:relative;
-}
-.channel-link {
+
+.channel-link, .channel-link:hover, .channel-link:visited, .channel-link:active {
 	display:block;
-}
-
-a, a:hover, a:visited {
 	color:inherit;
 	text-decoration:inherit;
 }
+.channel {
+	background:@overlay;
+	margin:10px;
+	padding:10px;
+	border: 2px solid @overlayborder;
+	.border-radius(6px);
+	position:relative;
+	overflow:hidden;
+	font-size: 1.2em;
+	color:@weaktext;
+}
+.channel:hover {
+	background: @overlayhover;
+}
+
 
 .channel h2 {
 	display:inline;
 	float:left;
 	margin:0;
-	padding-right: 6px;
-}
-.channel p {
-}
-.meta, .author {
-	color:#888;
-	padding:0 12px 0 0;
-}
-.meta {
-	display:inline;
-
-}
-.meta span, .author span {
-	color:#000;
+	padding-right: 0.2em;
 }
 .author {
-	padding-top: 12px;
-	vertical-align: bottom;
-	font-size: 22px;
+	padding-top: 0.55em;
+	font-size: 1.45em;
+}
+.description {
+	max-height: 3.3em;
+}
+.meta {
+	float:left;
+	width:30%;
+	margin: 0;
+}
+.meta span, .author span {
+	color:@strongtext;
 }
 .author span {
 	font-weight: bold;
