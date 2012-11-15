@@ -8,6 +8,7 @@
 <% @channels.each do |channel| %>
 <%= link_to channel, :class => 'channel-link' do %>
   <div class="channel">
+  	<img src="cover_art_small" width="100" height='100' alt="">
     <h2><%= channel.title %></h2>
     <p class="author"> BY <span><%= channel.author %></span></p>
     <p class="description"><%= channel.summary %></p>
