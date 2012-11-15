@@ -1,33 +1,17 @@
 <p id="notice"><%= notice %></p>
-<%= link_to "RSS Feed for Channel", channel_path(@channel,:rss) %>
-<p>
-  <b>Author:</b>
-  <%= @channel.author %>
-</p>
 
-<p>
-  <b>Title:</b>
-  <%= @channel.title %>
-</p>
+<p><%= link_to 'Back', channels_path %></p>
+<div class="channel-info">
+    <img src="cover_art_medium" width="250" height="250" class="cover">
 
-<p>
-  <b>Summary:</b>
-  <%= @channel.summary %>
-</p>
-
-<p>
-  <b>Category:</b>
-  <%= @channel.category %>
-</p>
-
-<p>
-  <b>Language:</b>
-  <%= @channel.language %>
-</p>
-
+    <h1><%= @channel.title %></h1>
+    <p class="author">BY <span><%= @channel.author %></span></p>
+    <p class="description"><%= @channel.summary %></p>
+    <p class="meta">CATEGORY: <span><%= @channel.category %></span></p>
+    <p class="meta">LANGUAGE: <span><%= @channel.language %></span></p>
+    <p class="meta">EPISODES: <span><%= @channel.episodes.count %></span></p>
+    <p><%= link_to '<i class="icon-edit icon-white"></i>'.html_safe, edit_channel_path(@channel) %><%= link_to '<i class="icon-trash icon-white"></i>'.html_safe, @channel, method: :delete, data: { confirm: 'Are you sure?' } %><%= link_to '<i class="icon-fire icon-white"></i>'.html_safe, channel_path(@channel, :rss) %></p>
+</div>
 <dl>
   <%= render @channel.episodes %>
 </dl>
-
-<%= link_to 'Edit', edit_channel_path(@channel) %> |
-<%= link_to 'Back', channels_path %>

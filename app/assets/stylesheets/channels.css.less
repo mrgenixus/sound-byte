@@ -28,8 +28,10 @@ h2 {
 	padding:10px;
 	border: 2px solid @overlayborder;
 	.border-radius(6px);
-	position:relative;
 	overflow:hidden;
+}
+.channel, .channel-info {
+	position:relative;
 	font-size: 1.2em;
 	color:@weaktext;
 }
@@ -37,7 +39,7 @@ h2 {
 	background: @overlayhover;
 }
 
-.channel img {
+.channel img, .cover {
 	float:left;
 	.border-radius(6px);
 	margin-right: 10px;
@@ -54,8 +56,9 @@ h2 {
 }
 .description {
 	max-height: 3.3em;
+	min-height: 1.2em;
 }
-.meta {
+.channel .meta {
 	float:left;
 	width:25%;
 	margin: 0;
