@@ -20,6 +20,12 @@ class Episode < ActiveRecord::Base
   end
 
   def track_length_formatted 
-  	(track_length / 24 / 60).floor.to_s + ":" +(track_length / 60 % 24).to_s + ":"  + (track_length % 60).to_s
+    
+    begin
+      "%02d" % (self.track_length / 24 / 60).floor + ":" + "%02d" % (self.track_length / 60 % 24) + ":"  + "%02d" % (self.track_length % 60)
+    rescue Exception => e
+      "00:00:00"
+    end
+  	
   end
 end
