@@ -1,30 +1,27 @@
+<div class="buttonbar">
+  <%= link_to 'New Episode', new_episode_path, :class => 'btn' %>
+</div>
 <h1>Listing episodes</h1>
 
-<table>
+<table class="table table-striped table-hover">
   <tr>
     <th>Channel</th>
     <th>Title</th>
     <th>Subtitle</th>
     <th>Track length</th>
-    <th>Content type</th>
-    <th></th>
-    <th></th>
     <th></th>
   </tr>
 
 <% @episodes.each do |episode| %>
   <tr>
     <td><%= episode.channel.title %></td>
-    <td><%= episode.title %></td>
+    <td><%= link_to episode.title, episode %></td>
     <td><%= episode.subtitle %></td>
     <td><%= episode.track_length_formatted %></td>
-    <td><%= link_to 'Show', episode %></td>
-    <td><%= link_to 'Edit', edit_episode_path(episode) %></td>
-    <td><%= link_to 'Destroy', episode, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to '<i class="icon-edit icon-white"></i>'.html_safe, edit_channel_path(episode) %><%= link_to '<i class="icon-trash icon-white"></i>'.html_safe, episode, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Episode', new_episode_path %>
