@@ -12,6 +12,24 @@
     <p class="meta">EPISODES: <span><%= @channel.episodes.count %></span></p>
     <p><%= link_to '<i class="icon-edit icon-white"></i>'.html_safe, edit_channel_path(@channel) %><%= link_to '<i class="icon-trash icon-white"></i>'.html_safe, @channel, method: :delete, data: { confirm: 'Are you sure?' } %><%= link_to '<i class="icon-fire icon-white"></i>'.html_safe, channel_path(@channel, :rss) %></p>
 </div>
-<dl>
-  <%= render @channel.episodes %>
-</dl>
+
+
+<table class="episode-list">
+  <tr>
+    <th>Channel</th>
+    <th>Title</th>
+    <th>Subtitle</th>
+    <th width="100">Track length</th>
+    <th width="35"></th>
+  </tr>
+
+<% @channel.episodes.each do |episode| %>
+  <tr>
+    <td><%= episode.channel.title %></td>
+    <td><%= link_to episode.title, episode %></td>
+    <td><%= episode.subtitle %></td>
+    <td><%= episode.track_length_formatted %></td>
+    <td><%= link_to '<i class="icon-edit icon-white"></i>'.html_safe, edit_episode_path(episode) %><%= link_to '<i class="icon-trash icon-white"></i>'.html_safe, episode, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>

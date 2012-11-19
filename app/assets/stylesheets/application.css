@@ -8,18 +8,19 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require twitter/bootstrap
+ * require twitter/bootstrap
+ *= require app
  *= require_self
  *= require_tree .
  */
 
- @import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700);
+ /*@import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700);*/
 
- body {
+/* body {
  	font-family: 'PT Sans Narrow',Helvetica, Ariel, sans-serif;
  	background:#181818;
  	color:#eeeeee;
- }
+ }*/
  .container {
  	position: relative;
  }
@@ -34,4 +35,3 @@
 	padding-top:12px;
 	right:0;
 }
-
