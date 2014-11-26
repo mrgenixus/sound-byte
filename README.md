@@ -10,4 +10,4 @@ Currently to be done:
 - [ ] Implement per-user s3 configuration
 - [ ] Implement file-data reading with FFMpeg or other online encoding tool
 - [ ] Heroku deployment
-- [ ] (optional) Convert or add option for sound-cloud
+- [ ] Convert or add option for sound-cloud (optional)
